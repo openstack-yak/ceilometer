@@ -8,9 +8,9 @@ Getting started
 ---------------
 
 The overview we’re looking at is
-`*overview-hostlayout.html* <http://docs.openstack.org/developer/openstack-ansible/liberty/install-guide/overview-hostlayout.html>`__
+`overview-hostlayout.html <http://docs.openstack.org/developer/openstack-ansible/liberty/install-guide/overview-hostlayout.html>`__
 (now an obsolete version) and (what used to be the following) page,
-`*overview-requirements.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/overview-requirements.html>`__.
+`overview-requirements.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/overview-requirements.html>`__.
 
 We will engage in an exercise to demonstrate how we create a private
 tenant network inside of openstack and demonstrate ICMP traffic between
@@ -20,22 +20,22 @@ First, let's start with a test network to verify we understand the steps
 in configuration of a network (that we have traffic pathways):
 
 1. Go to
-       `*https://cloud1.osic.org/project/networks/* <https://cloud1.osic.org/project/networks/>`__
+       `https://cloud1.osic.org/project/networks/ <https://cloud1.osic.org/project/networks/>`__
        and “Create Network”;
 
    -  You want to create a private (i.e. no external access) tenant
           network
 
       -  Ref:
-             `*https://www.arin.net/knowledge/address\_filters.html* <https://www.arin.net/knowledge/address_filters.html>`__
+             `https://www.arin.net/knowledge/address\_filters.html <https://www.arin.net/knowledge/address_filters.html>`__
 
       -  Submask ref:
-             `*https://en.wikipedia.org/wiki/Classless\_Inter-Domain\_Routing* <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`__
+             `https://en.wikipedia.org/wiki/Classless\_Inter-Domain\_Routing <https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing>`__
 
    -  That means “disable gateway” in the subnet creation;
 
 2. Next, go to
-       `*https://cloud1.osic.org/project/instances/* <https://cloud1.osic.org/project/instances/>`__
+       `https://cloud1.osic.org/project/instances/ <https://cloud1.osic.org/project/instances/>`__
        and create some instances, one at a time, so we can test the
        private network
 
@@ -88,7 +88,7 @@ in configuration of a network (that we have traffic pathways):
          -  Create the file /etc/network/interfaces.d/eth1.cfg with the
                 following format, as root, replacing addresses,
                 netmasks, and interfaces as needed:
-                `*https://gist.github.com/stevelle/03bec81f20c19ca5dca96ab846a2f4d7* <https://gist.github.com/stevelle/03bec81f20c19ca5dca96ab846a2f4d7>`__
+                `https://gist.github.com/stevelle/03bec81f20c19ca5dca96ab846a2f4d7 <https://gist.github.com/stevelle/03bec81f20c19ca5dca96ab846a2f4d7>`__
 
             -  Adjust the filename (here, .../interfaces/eth2.cfg) to
                    match the device needing configuration on our
@@ -151,14 +151,14 @@ Create a management network, storage network, and tunnel network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For overview of OSA Network design, see
-`*openstack-ansible/install-guide/targethosts-network.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html>`__
+`openstack-ansible/install-guide/targethosts-network.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html>`__
 
 definitions:
 
 -  As above (step 1), no gateway, no router.
 
-   -  See the `*private address filter
-          reference* <https://www.arin.net/knowledge/address_filters.html>`__
+   -  See the `private address filter
+          reference <https://www.arin.net/knowledge/address_filters.html>`__
           (above);
 
    -  Assign an easily identifiable unique address space for each of the
@@ -199,10 +199,10 @@ appropriate network(s).
 Follow instructions from the install guide for preparing the deployment
 host and the target hosts (see:
 
-`*http://docs.openstack.org/developer/openstack-ansible/install-guide/deploymenthost.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/deploymenthost.html>`__
+`http://docs.openstack.org/developer/openstack-ansible/install-guide/deploymenthost.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/deploymenthost.html>`__
 and
 
-`*http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-prepare.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-prepare.html>`__
+`http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-prepare.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-prepare.html>`__
 etc…)
 
 E.g. Install and configure basic packages
@@ -214,10 +214,10 @@ sudo tcpdump vlan
 Etc…
 
 When you get to
-`*http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html>`__
+`http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-network.html>`__
 
 Panic, because you don’t know what to do!
 
 (^^^ THIS is a note that says we need to develop the solution from here
 forward, probably based on
-`*http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-networkexample.html* <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-networkexample.html>`__)
+`http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-networkexample.html <http://docs.openstack.org/developer/openstack-ansible/install-guide/targethosts-networkexample.html>`__)
